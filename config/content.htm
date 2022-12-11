@@ -3,72 +3,7 @@
 <p></p>
 <p>我的倉儲:<a href="https://github.com/mdecp2022/site-kevingg601">https://github.com/mdecp2022/site-kevingg601</a></p>
 <p>我的倉儲修改內容:<a href="https://github.com/mdecp2022/site-kevingg601/commits/main">https://github.com/mdecp2022/site-kevingg601/commits/main</a></p><h1>HW</h1>
-<h3>w14</h3>
-<!-- 
-在動態網站頁面中啟用 Brython 執行環境的用法, 請注意動態網站執行所在路徑
--->
-<script src="/static/brython.js"></script>
-<script src="/static/brython_stdlib.js"></script>
-<!-- 啟動 Brython -->
-<p>
-<script>
-window.onload=function(){
-brython({debug:1, pythonpath:['/static/','/downloads/py/']});
-}
-</script>
-<!-- 以下事先在頁面中加入 id="brython_div" 的 div 標註
-之後可利用 Brython 的 document 模組與此 html 標註對應
---></p>
-<div id="brython_div"></div>
-<p>
-<script type="text/python">
-from browser import html, document
-# Brython 的 input() 可以接受輸入提示字串, 跳出瀏覽器輸入表單後, 將輸入內容以字串取回
-user_input_temp = input("請輸入攝氏溫度值:")
-# 接著列出 user_input_temp 變數的資料型別
-# 但是在頁面中 Brython 的 print() 將會顯示在 log 而非頁面
-print(type(user_input_temp))
-# 這裡定義一個 brython_div 變數, 透過 document[] 與頁面中 id="brython_div" 的位置對應
-brython_div = document["brython_div"]
-# 看能不能直接將變數值字串列在標註 id 為 "brython_div" 的頁面位置
-brython_div <= user_input_temp
-# 之後若要列出 html, 則需要透過 Brython 的 html 模組
-</script>
-</p>
-<p>加上說明</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;h3&gt;w14&lt;/h3&gt;
-&lt;!-- 
-在動態網站頁面中啟用 Brython 執行環境的用法, 請注意動態網站執行所在路徑
---&gt;
-&lt;script src="/static/brython.js"&gt;&lt;/script&gt;
-&lt;script src="/static/brython_stdlib.js"&gt;&lt;/script&gt;
-&lt;!-- 啟動 Brython --&gt;
-&lt;p&gt;
-&lt;script&gt;// &lt;![CDATA[
-window.onload=function(){
-brython({debug:1, pythonpath:['/static/','/downloads/py/']});
-}
-// ]]&gt;&lt;/script&gt;
-&lt;!-- 以下事先在頁面中加入 id="brython_div" 的 div 標註
-之後可利用 Brython 的 document 模組與此 html 標註對應
---&gt;&lt;/p&gt;
-&lt;div id="brython_div"&gt;&lt;/div&gt;
-&lt;p&gt;
-&lt;script type="text/python"&gt;// &lt;![CDATA[
-from browser import html, document
-# Brython 的 input() 可以接受輸入提示字串, 跳出瀏覽器輸入表單後, 將輸入內容以字串取回
-user_input_temp = input("請輸入攝氏溫度值:")
-# 接著列出 user_input_temp 變數的資料型別
-# 但是在頁面中 Brython 的 print() 將會顯示在 log 而非頁面
-print(type(user_input_temp))
-# 這裡定義一個 brython_div 變數, 透過 document[] 與頁面中 id="brython_div" 的位置對應
-brython_div = document["brython_div"]
-# 看能不能直接將變數值字串列在標註 id 為 "brython_div" 的頁面位置
-brython_div &lt;= user_input_temp
-# 之後若要列出 html, 則需要透過 Brython 的 html 模組
-// ]]&gt;&lt;/script&gt;
-&lt;/p&gt;</pre>
-<p><br/><br/></p><h2>w13</h2>
+<h3>w14</h3><h2>w13</h2>
 <p><a href="https://mdecp2022.github.io/site-scrum-4/content/Brython.html?src=https://gist.githubusercontent.com/kevingg601/202de06cba819abdb5ebf07d275d1be4/raw/844ce1d8062fece58e8d206a7ee53ac34137c270/w13_temp_ex1.py">temp</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">'''
 f =c*9/5 + 32
@@ -495,8 +430,98 @@ print("="*20)
 print("以下為 w10 缺考名單:")
 for stud in cp_abs:
     print(stud)</pre>
+<p>使用按鈕啟動 get_input</p>
 <p></p>
-<h2>w10</h2>
+<!-- 
+在動態網站頁面中啟用 Brython 執行環境的用法, 請注意動態網站執行所在路徑
+-->
+<script src="/static/brython.js"></script>
+<script src="/static/brython_stdlib.js"></script>
+<!-- 啟動 Brython -->
+<p>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['/static/','/downloads/py/']});
+}
+</script>
+<!-- 以下事先在頁面中加入 id="brython_div" 的 div 標註
+之後可利用 Brython 的 document 模組與此 html 標註對應
+--></p>
+<div id="brython_div"></div>
+<p><!-- 將直接執行的程式變成註解的 
+<script type="text/python">
+from browser import html, document
+# Brython 的 input() 可以接受輸入提示字串, 跳出瀏覽器輸入表單後, 將輸入內容以字串取回
+user_input_temp = input("請輸入攝氏溫度值:")
+# 接著列出 user_input_temp 變數的資料型別
+# 但是在頁面中 Brython 的 print() 將會顯示在 log 而非頁面
+print(type(user_input_temp))
+# 這裡定義一個 brython_div 變數, 透過 document[] 與頁面中 id="brython_div" 的位置對應
+brython_div = document["brython_div"]
+# 看能不能直接將變數值字串列在標註 id 為 "brython_div" 的頁面位置
+brython_div <= user_input_temp
+# 之後若要列出 html, 則需要透過 Brython 的 html 模組
+</script>
+--></p>
+<p><button id="btn1">啟動下方程式的按鈕</button></p>
+<div id="brython_div"></div>
+<p>
+<script type="text/python">
+from browser import html, document
+# Brython 的 input() 可以接受輸入提示字串, 跳出瀏覽器輸入表單後, 將輸入內容以字串取回
+#user_input_temp = input("請輸入攝氏溫度值:")
+# 接著列出 user_input_temp 變數的資料型別
+# 但是在頁面中 Brython 的 print() 將會顯示在 log 而非頁面
+#print(type(user_input_temp))
+# 這裡定義一個 brython_div 變數, 透過 document[] 與頁面中 id="brython_div" 的位置對應
+brython_div = document["brython_div"]
+# 看能不能直接將變數值字串列在標註 id 為 "brython_div" 的頁面位置
+#brython_div <= user_input_temp
+# 之後若要列出 html, 則需要透過 Brython 的 html 模組
+# 接下來要設法按下按鈕之後才執行取使用者 input 的流程
+# 首先 comment 掉前面的 input() 與 print(), 同時蓋掉輸出, 並利用事件導向設計一個函式
+def get_input(env):
+    user_input_temp = input("請輸入攝氏溫度值:")
+    brython_div <= user_input_temp
+# 透過 Brython browser 模組中的 document 物件將 id="btn1" 的物件中的 bind() 方法
+# 讓使用者 click 後會經由瀏覽器中的 event 通知執行 get_input 函式
+document["btn1"].bind('click', get_input)
+</script>
+</p>
+<p>加上說明</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;h3&gt;w12&lt;/h3&gt;
+&lt;!-- 
+在動態網站頁面中啟用 Brython 執行環境的用法, 請注意動態網站執行所在路徑
+--&gt;
+&lt;script src="/static/brython.js"&gt;&lt;/script&gt;
+&lt;script src="/static/brython_stdlib.js"&gt;&lt;/script&gt;
+&lt;!-- 啟動 Brython --&gt;
+&lt;p&gt;
+&lt;script&gt;// &lt;![CDATA[
+window.onload=function(){
+brython({debug:1, pythonpath:['/static/','/downloads/py/']});
+}
+// ]]&gt;&lt;/script&gt;
+&lt;!-- 以下事先在頁面中加入 id="brython_div" 的 div 標註
+之後可利用 Brython 的 document 模組與此 html 標註對應
+--&gt;&lt;/p&gt;
+&lt;div id="brython_div"&gt;&lt;/div&gt;
+&lt;p&gt;
+&lt;script type="text/python"&gt;// &lt;![CDATA[
+from browser import html, document
+# Brython 的 input() 可以接受輸入提示字串, 跳出瀏覽器輸入表單後, 將輸入內容以字串取回
+user_input_temp = input("請輸入攝氏溫度值:")
+# 接著列出 user_input_temp 變數的資料型別
+# 但是在頁面中 Brython 的 print() 將會顯示在 log 而非頁面
+print(type(user_input_temp))
+# 這裡定義一個 brython_div 變數, 透過 document[] 與頁面中 id="brython_div" 的位置對應
+brython_div = document["brython_div"]
+# 看能不能直接將變數值字串列在標註 id 為 "brython_div" 的頁面位置
+brython_div &lt;= user_input_temp
+# 之後若要列出 html, 則需要透過 Brython 的 html 模組
+// ]]&gt;&lt;/script&gt;
+&lt;/p&gt;</pre>
+<p><br/><br/></p><h2>w10</h2>
 <p><a href="https://mdecp2022.github.io/site-kevingg601/content/Brython.html?src=https://gist.githubusercontent.com/kevingg601/9d453a6263ed4674ec41e0f94373dfb1/raw/d179bcb4f4adbb8e00194b2ad4132ffc8e2cd202/1%25203%25205%25207%25209%2520%25E7%25A8%258B%25E5%25BC%258F">1 3 5 7 9 程式</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">for i in range(1,10,2):
     

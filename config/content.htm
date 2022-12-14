@@ -370,7 +370,8 @@ def do_game():
 doc.addEventListener("keydown", key_down)
 doc.addEventListener("keyup", key_up)
 browser.timer.set_interval(do_game, fps)</pre>
-<p></p><h2>w12</h2>
+<p></p>
+<h2>w12</h2>
 <p><a href="https://mdecp2022.github.io/site-kevingg601/content/Brython.html?src=https://gist.githubusercontent.com/kevingg601/28344607facf436da452523e238cd7c7/raw/9db5eb9b0a011a9cc70d0d599da8768062f7f68c/w12_hw_ex2.py">溫度轉換程式</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># Brython 的 input() 可以接受輸入提示字串, 跳出瀏覽器輸入表單後, 將輸入內容以字串取回
 user_input_temp = input("請輸入攝氏溫度值:")
@@ -554,6 +555,16 @@ for i in data:
     link = html.A(stud_num, href=site)
     brython_div1 &lt;= link
     brython_div1 &lt;= html.BR()</pre>
+<p><a href="https://mdecp2022.github.io/site-kevingg601/content/Brython.html?src=https://gist.githubusercontent.com/kevingg601/421ecef013a32c2e642c399f4986f6ba/raw/a85d889af2525436445a5745716e06812d995a72/w6%2520%25E6%258A%25BD%25E9%25BB%259E%25E7%25A8%258B%25E5%25BC%258F">cp1a抽點程式</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import random
+cp1a = "0747"
+url = "https://nfu.cycu.org/?semester=1111&amp;courseno=" + cp1a + "&amp;column=True"
+data = open(url).read().split("\n")#用open()打開網站 再用read()讀取網站內容 用split(), 以 \n 跳行符號分割#
+stud = data[:-1]
+random.shuffle(stud)
+num = 5 #想要抽5個人#
+for i in range(num):
+    print(stud[i])</pre>
 <p></p><h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>

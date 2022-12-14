@@ -167,6 +167,16 @@ for i in data:
     link = html.A(stud_num, href=site)
     brython_div1 &lt;= link
     brython_div1 &lt;= html.BR()</pre>
+<p><a href="https://mdecp2022.github.io/site-kevingg601/content/Brython.html?src=https://gist.githubusercontent.com/kevingg601/421ecef013a32c2e642c399f4986f6ba/raw/a85d889af2525436445a5745716e06812d995a72/w6%2520%25E6%258A%25BD%25E9%25BB%259E%25E7%25A8%258B%25E5%25BC%258F">cp1a抽點程式</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import random
+cp1a = "0747"
+url = "https://nfu.cycu.org/?semester=1111&amp;courseno=" + cp1a + "&amp;column=True"
+data = open(url).read().split("\n")#用open()打開網站 再用read()讀取網站內容 用split(), 以 \n 跳行符號分割#
+stud = data[:-1]
+random.shuffle(stud)
+num = 5 #想要抽5個人#
+for i in range(num):
+    print(stud[i])</pre>
 <p></p><br />w10 << <a href='w10.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython</div>
         
     <!-- footer -->

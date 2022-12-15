@@ -48,7 +48,8 @@ print("="*20)
 print("以下為 w14 缺考名單:")
 for stud in cp_abs:
     print(stud)</pre>
-<p></p><h2>w13</h2>
+<p></p>
+<h2>w13</h2>
 <p><a href="https://mdecp2022.github.io/site-kevingg601/content/Brython.html?src=https://gist.githubusercontent.com/kevingg601/202de06cba819abdb5ebf07d275d1be4/raw/844ce1d8062fece58e8d206a7ee53ac34137c270/w13_temp_ex1.py">temp</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">'''
 f =c*9/5 + 32
@@ -519,7 +520,8 @@ brython_div = document["brython_div"]
 brython_div &lt;= user_input_temp
 # 之後若要列出 html, 則需要透過 Brython 的 html 模組
 // ]]&gt;&lt;/script&gt;
-&lt;/p&gt;</pre><h2>w11</h2>
+&lt;/p&gt;</pre>
+<h2>w11</h2>
 <p><a href="https://mdecp2022.github.io/site-kevingg601/content/Brython.html?src=https://gist.githubusercontent.com/kevingg601/7dc57b951eca99007f1ffe54ac1e9013/raw/5e1443b061ebf1dc42102a0588c62863b7d3f545/w10%2520%25E7%25BC%25BA%25E8%2580%2583%25E5%2590%258D%25E5%2596%25AE">cp1a 第十週缺考名單</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import ast
 
@@ -560,12 +562,14 @@ print("="*20)
 print("以下為 w10 缺考名單:")
 for stud in cp_abs:
     print(stud)</pre>
-<p></p><h2>w10</h2>
+<p></p>
+<h2>w10</h2>
 <p><a href="https://mdecp2022.github.io/site-kevingg601/content/Brython.html?src=https://gist.githubusercontent.com/kevingg601/9d453a6263ed4674ec41e0f94373dfb1/raw/d179bcb4f4adbb8e00194b2ad4132ffc8e2cd202/1%25203%25205%25207%25209%2520%25E7%25A8%258B%25E5%25BC%258F">1 3 5 7 9 程式</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">for i in range(1,10,2):
 #從1開始一直加2，加到10    
     print(i,end=" ")</pre>
-<p>心得:用簡單的程式做出數列，蠻有趣的。</p><h2>w6</h2>
+<p>心得:用簡單的程式做出數列，蠻有趣的。</p>
+<h2>w6</h2>
 <p><a href="https://mdecp2022.github.io/site-kevingg601/content/Brython.html?src=https://gist.githubusercontent.com/kevingg601/436358fd36a6e10e409e3aab21e933cd/raw/bfd552b0428a0202496ff9405a0c1db15ae2ff4b/w6%2520%25E9%25A1%25AF%25E7%25A4%25BA%25E5%25AD%25B8%25E5%2593%25A1%25E9%259D%259C%25E6%2585%258B%25E7%25B6%25B2%25E9%25A0%2581%25E9%2580%25A3%25E7%25B5%2590">顯示學員靜態網頁</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import document, html
 
@@ -602,7 +606,21 @@ num = 5 #想要抽5個人#
 for i in range(num):
     print(stud[i])</pre>
 <p></p>
-<h1>Brython</h1>
+<h2>w5</h2>
+<p><a href="https://mdecp2022.github.io/site-kevingg601/content/Brython.html?src=https://gist.githubusercontent.com/kevingg601/3c8b0bd8c6618a66f292b436e7c80ac8/raw/eacfee8d5a2464437b02b8147526e41f388e8555/w5%2520%25E4%25BA%2582%25E6%2595%25B8%25E7%2594%25A2%25E7%2594%259F">亂數產生器(4位數)</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import random
+import string
+
+def password_generator(size=4, chars=string.ascii_lowercase + string.digits):
+    
+    """Generate random password
+    """
+    return ''.join(random.choice(chars) for _ in range(size))
+
+_Pass_string = "abcdefghkmnpqrstuwxyz123456789"
+for i in range(10):
+    print(password_generator(4, _Pass_string))</pre>
+<p>心得:這樣以後要幾位數的密碼都沒問題了。</p><h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
 <p style="padding-left: 30px;"><a href="https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d">https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d</a></p>

@@ -142,17 +142,16 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">w6 << <a href='w6.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython<br /><h1>w5</h1>
-<p><a href="https://mdecp2022.github.io/site-kevingg601/content/Brython.html?src=https://gist.githubusercontent.com/kevingg601/3c8b0bd8c6618a66f292b436e7c80ac8/raw/eacfee8d5a2464437b02b8147526e41f388e8555/w5%2520%25E4%25BA%2582%25E6%2595%25B8%25E7%2594%25A2%25E7%2594%259F">亂數產生器(4位數)</a></p>
+<p><a href="https://mdecp2022.github.io/site-kevingg601/content/Brython.html?src=https://gist.githubusercontent.com/kevingg601/3c8b0bd8c6618a66f292b436e7c80ac8/raw/9e3ee403f70629377efa1bf805162e22d7b37603/w5%2520%25E4%25BA%2582%25E6%2595%25B8%25E7%2594%25A2%25E7%2594%259F">亂數產生器(4位數)</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import random
 import string
 
 def password_generator(size=4, chars=string.ascii_lowercase + string.digits):
     
-    """Generate random password
-    """
     return ''.join(random.choice(chars) for _ in range(size))
 
-_Pass_string = "abcdefghkmnpqrstuwxyz123456789"
+_Pass_string = "abcdefghijklmnopqrstuvwxyz123456789"
+
 for i in range(10):
     print(password_generator(4, _Pass_string))</pre>
 <p>心得:這樣以後要幾位數的密碼都沒問題了。</p><br />w6 << <a href='w6.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython</div>

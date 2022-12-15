@@ -522,8 +522,48 @@ brython_div &lt;= user_input_temp
 # 之後若要列出 html, 則需要透過 Brython 的 html 模組
 // ]]&gt;&lt;/script&gt;
 &lt;/p&gt;</pre>
-<p><br/><br/></p>
-<h2>w10</h2>
+<h2>w11</h2>
+<p><a href="https://mdecp2022.github.io/site-kevingg601/content/Brython.html?src=https://gist.githubusercontent.com/kevingg601/7dc57b951eca99007f1ffe54ac1e9013/raw/5e1443b061ebf1dc42102a0588c62863b7d3f545/w10%2520%25E7%25BC%25BA%25E8%2580%2583%25E5%2590%258D%25E5%2596%25AE">cp1a 第十週缺考名單</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import ast
+
+def get_stud(c_name):
+    courses = {"1a": "0747", "1b": "0761", "2a": "0773", "2b": "0786"}
+    c = courses[c_name]
+    url = "https://nfu.cycu.org/?semester=1111&amp;courseno=" + c + "&amp;column=True"
+    data = open(url).read().split("\n")
+    stud = data[:-1]
+    return stud
+    
+cp_stud = get_stud("1a")
+
+cp_w10_quiz_url = "https://gist.githubusercontent.com/mdecycu/9df4b372ac1b7386cf259ced15f1a2b2/raw/9e8bf693a2805631aa12992db4d4f23e0f64e868/2022_1112_cp1a_w10_quiz.json"
+
+def get_score(url):
+    json_data = open(url).read()
+    big_dict = ast.literal_eval(json_data)
+    data = big_dict["body"]["testuser"]
+    quiz_dict = {}
+    for i in data:
+        stud_id = data[i]["user_name"]
+        stud_score = int(float(data[i]["total_score"]))
+        quiz_dict[stud_id] = stud_score
+    return quiz_dict
+    
+cp_quiz = get_score(cp_w10_quiz_url)
+cp_abs = []
+for stud in cp_stud:
+    try:
+        print(stud, cp_quiz[stud])
+    except:
+        # 缺考者沒有 quiz 成績
+        print(stud, "缺")
+        cp_abs.append(stud)
+# 列出缺考名單
+print("="*20)
+print("以下為 w10 缺考名單:")
+for stud in cp_abs:
+    print(stud)</pre>
+<p></p><h2>w10</h2>
 <p><a href="https://mdecp2022.github.io/site-kevingg601/content/Brython.html?src=https://gist.githubusercontent.com/kevingg601/9d453a6263ed4674ec41e0f94373dfb1/raw/d179bcb4f4adbb8e00194b2ad4132ffc8e2cd202/1%25203%25205%25207%25209%2520%25E7%25A8%258B%25E5%25BC%258F">1 3 5 7 9 程式</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">for i in range(1,10,2):
     
@@ -555,6 +595,16 @@ for i in data:
     link = html.A(stud_num, href=site)
     brython_div1 &lt;= link
     brython_div1 &lt;= html.BR()</pre>
+<p><a href="https://mdecp2022.github.io/site-kevingg601/content/Brython.html?src=https://gist.githubusercontent.com/kevingg601/421ecef013a32c2e642c399f4986f6ba/raw/a85d889af2525436445a5745716e06812d995a72/w6%2520%25E6%258A%25BD%25E9%25BB%259E%25E7%25A8%258B%25E5%25BC%258F">cp1a抽點程式</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import random
+cp1a = "0747"
+url = "https://nfu.cycu.org/?semester=1111&amp;courseno=" + cp1a + "&amp;column=True"
+data = open(url).read().split("\n")#用open()打開網站 再用read()讀取網站內容 用split(), 以 \n 跳行符號分割#
+stud = data[:-1]
+random.shuffle(stud)
+num = 5 #想要抽5個人#
+for i in range(num):
+    print(stud[i])</pre>
 <p></p>
 <h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>

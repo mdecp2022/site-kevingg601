@@ -4,7 +4,51 @@
 <p>我的倉儲:<a href="https://github.com/mdecp2022/site-kevingg601">https://github.com/mdecp2022/site-kevingg601</a></p>
 <p>我的倉儲修改內容:<a href="https://github.com/mdecp2022/site-kevingg601/commits/main">https://github.com/mdecp2022/site-kevingg601/commits/main</a></p>
 <h1>HW</h1>
-<h2>w13</h2>
+<h2>w14</h2>
+<p><a href="https://mdecp2022.github.io/site-kevingg601/content/Brython.html?src=https://gist.githubusercontent.com/kevingg601/af2806e0d7bd7c2015ef32a7925a6b9a/raw/af38ed316cc7c87925a6960686bd7ed30c596055/w14%2520%25E7%25BC%25BA%25E8%2580%2583%25E5%2590%258D%25E5%2596%25AE">第14週缺考名單</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import ast
+
+# get stud_list first
+
+def get_stud(c_name):
+    courses = {"1a": "0747", "1b": "0761", "2a": "0773", "2b": "0786"}
+    c = courses[c_name]
+    url = "https://nfu.cycu.org/?semester=1111&amp;courseno=" + c + "&amp;column=True"
+    data = open(url).read().split("\n")
+    stud = data[:-1]
+    return stud
+    
+cp_stud = get_stud("1a")
+
+# 取得第14週考試的成績的url
+cp_w14_quiz_url = "https://gist.githubusercontent.com/mdecycu/9df4b372ac1b7386cf259ced15f1a2b2/raw/a48d36ae883bde8efd07b25bfddaed8f13200353/2022_1209_cp_w14_1a_quiz.json"
+
+def get_score(url):
+    json_data = open(url).read()
+    big_dict = ast.literal_eval(json_data)
+    data = big_dict["body"]["testuser"]
+    quiz_dict = {}
+    for i in data:
+        stud_id = data[i]["user_name"]
+        stud_score = int(float(data[i]["total_score"]))
+        quiz_dict[stud_id] = stud_score
+    return quiz_dict
+    
+cp_quiz = get_score(cp_w14_quiz_url)
+cp_abs = []
+for stud in cp_stud:
+    try:
+        print(stud, cp_quiz[stud])
+    except:
+        # 缺考者沒有 quiz 成績
+        print(stud, "缺")
+        cp_abs.append(stud)
+# 列出缺考名單
+print("="*20)
+print("以下為 w14 缺考名單:")
+for stud in cp_abs:
+    print(stud)</pre>
+<p></p><h2>w13</h2>
 <p><a href="https://mdecp2022.github.io/site-kevingg601/content/Brython.html?src=https://gist.githubusercontent.com/kevingg601/202de06cba819abdb5ebf07d275d1be4/raw/844ce1d8062fece58e8d206a7ee53ac34137c270/w13_temp_ex1.py">temp</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">'''
 f =c*9/5 + 32

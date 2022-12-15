@@ -141,9 +141,11 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">w12 << <a href='w12.html'>Previous</a> <a href='w10.html'>Next</a> >> w10<br /><h1>w11</h1>
-<p><a href="https://mdecp2022.github.io/site-kevingg601/content/Brython.html?src=https://gist.githubusercontent.com/kevingg601/7dc57b951eca99007f1ffe54ac1e9013/raw/5e1443b061ebf1dc42102a0588c62863b7d3f545/w10%2520%25E7%25BC%25BA%25E8%2580%2583%25E5%2590%258D%25E5%2596%25AE">cp1a 第十週缺考名單</a></p>
+    <div id="tipue_search_content">HW << <a href='HW.html'>Previous</a> <a href='w13.html'>Next</a> >> w13<br /><h1>w14</h1>
+<p><a href="https://mdecp2022.github.io/site-kevingg601/content/Brython.html?src=https://gist.githubusercontent.com/kevingg601/af2806e0d7bd7c2015ef32a7925a6b9a/raw/af38ed316cc7c87925a6960686bd7ed30c596055/w14%2520%25E7%25BC%25BA%25E8%2580%2583%25E5%2590%258D%25E5%2596%25AE">第14週缺考名單</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import ast
+
+# get stud_list first
 
 def get_stud(c_name):
     courses = {"1a": "0747", "1b": "0761", "2a": "0773", "2b": "0786"}
@@ -155,7 +157,8 @@ def get_stud(c_name):
     
 cp_stud = get_stud("1a")
 
-cp_w10_quiz_url = "https://gist.githubusercontent.com/mdecycu/9df4b372ac1b7386cf259ced15f1a2b2/raw/9e8bf693a2805631aa12992db4d4f23e0f64e868/2022_1112_cp1a_w10_quiz.json"
+# 取得第14週考試的成績的url
+cp_w14_quiz_url = "https://gist.githubusercontent.com/mdecycu/9df4b372ac1b7386cf259ced15f1a2b2/raw/a48d36ae883bde8efd07b25bfddaed8f13200353/2022_1209_cp_w14_1a_quiz.json"
 
 def get_score(url):
     json_data = open(url).read()
@@ -168,7 +171,7 @@ def get_score(url):
         quiz_dict[stud_id] = stud_score
     return quiz_dict
     
-cp_quiz = get_score(cp_w10_quiz_url)
+cp_quiz = get_score(cp_w14_quiz_url)
 cp_abs = []
 for stud in cp_stud:
     try:
@@ -179,10 +182,10 @@ for stud in cp_stud:
         cp_abs.append(stud)
 # 列出缺考名單
 print("="*20)
-print("以下為 w10 缺考名單:")
+print("以下為 w14 缺考名單:")
 for stud in cp_abs:
     print(stud)</pre>
-<p></p><br />w12 << <a href='w12.html'>Previous</a> <a href='w10.html'>Next</a> >> w10</div>
+<p></p><br />HW << <a href='HW.html'>Previous</a> <a href='w13.html'>Next</a> >> w13</div>
         
     <!-- footer -->
       <div class="container">

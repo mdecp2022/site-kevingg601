@@ -607,18 +607,17 @@ for i in range(num):
     print(stud[i])</pre>
 <p></p>
 <h2>w5</h2>
-<p><a href="https://mdecp2022.github.io/site-kevingg601/content/Brython.html?src=https://gist.githubusercontent.com/kevingg601/3c8b0bd8c6618a66f292b436e7c80ac8/raw/9e3ee403f70629377efa1bf805162e22d7b37603/w5%2520%25E4%25BA%2582%25E6%2595%25B8%25E7%2594%25A2%25E7%2594%259F">亂數產生器(4位數)</a></p>
+<p><a href="https://mdecp2022.github.io/site-kevingg601/content/Brython.html?src=https://gist.githubusercontent.com/kevingg601/3c8b0bd8c6618a66f292b436e7c80ac8/raw/9cc7b23370c3f35e45f0a862fbeacb2e1e9377f3/w5%2520%25E4%25BA%2582%25E6%2595%25B8%25E7%2594%25A2%25E7%2594%259F">亂數產生器(4位數)</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import random
 import string
 
 def password_generator(size=4, chars=string.ascii_lowercase + string.digits):
-    
+# string.ascii_lowercase 是小寫的a~z，string.digits 是0~9
+
     return ''.join(random.choice(chars) for _ in range(size))
 
-_Pass_string = "abcdefghijklmnopqrstuvwxyz123456789"
-
 for i in range(10):
-    print(password_generator(4, _Pass_string))</pre>
+    print(password_generator(4))</pre>
 <p>心得:這樣以後要幾位數的密碼都沒問題了。</p><h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>

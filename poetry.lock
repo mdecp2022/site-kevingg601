@@ -352,6 +352,18 @@ unidecode = ">=1.1"
 markdown = ["markdown (>=3.1)"]
 
 [[package]]
+name = "pillow"
+version = "9.3.0"
+description = "Python Imaging Library (Fork)"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+docs = ["furo", "olefile", "sphinx (>=2.4)", "sphinx-copybutton", "sphinx-issues (>=3.0.1)", "sphinx-removed-in", "sphinxext-opengraph"]
+tests = ["check-manifest", "coverage", "defusedxml", "markdown2", "olefile", "packaging", "pyroma", "pytest", "pytest-cov", "pytest-timeout"]
+
+[[package]]
 name = "pluggy"
 version = "1.0.0"
 description = "plugin and hook calling mechanisms for python"
@@ -612,7 +624,7 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "e80da2346943657ab3493d49866148d61be4e5cba2c23996a6179ed6ed779c22"
+content-hash = "a5c9cfbb1b898915cff135e8aa652fc49be1031ed9682e47f07618819ffb156f"
 
 [metadata.files]
 attrs = []
@@ -643,6 +655,7 @@ packaging = []
 paramiko = []
 pathlib2 = []
 pelican = []
+pillow = []
 pluggy = []
 py = []
 pycparser = []

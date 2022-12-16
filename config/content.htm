@@ -34,7 +34,7 @@
 <div></div>
 <div></div>
 <div></div>
-<div><a href="https://mdecp2022.github.io/site-kevingg601/content/Brython.html?src=https://gist.githubusercontent.com/kevingg601/b783db867bc4fa60a0089c293e9abe43/raw/26c3fffafbaa77e50d5cb448ac72d36487cca2a8/%25E7%25B6%25A0%25E6%2596%25B9%25E5%25A1%258A">2D動態繪圖練習</a></div>
+<div><a href="https://mdecp2022.github.io/site-kevingg601/content/Brython.html?src=https://gist.githubusercontent.com/kevingg601/b783db867bc4fa60a0089c293e9abe43/raw/8e2b83be02cebcd2773320d95e66baf048759ded/%25E7%25B6%25A0%25E6%2596%25B9%25E5%25A1%258A">2D動態繪圖練習</a></div>
 <div>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 這個程式用於 demo 綠色方塊沿著特定網格路徑行走
 # 從 Brython 程式庫中的 browser 模組導入 document 類別, 並以簡寫設定為 doc
@@ -53,6 +53,11 @@ canvas.id = "canvas"
 # 將 document 中 id 為 "brython_div" 的標註 
 # 設為與 brython_div 變數對應
 brython_div = doc["brython_div1"]
+
+# 建立 buttons
+brython_div &lt;= html.BUTTON("啟動", id="power")
+brython_div &lt;= html.BR()
+
 # 將 canvas 標註放入 brython_div1 所在位置
 # 頁面中原本就已經放入 &lt;div id="brython_div"&gt;&lt;/div&gt; 標註
 brython_div &lt;= canvas
@@ -166,6 +171,31 @@ def game():
     nowy += stepy
     draw()
 
+# 將 anim 設為 None
+anim = None
+ 
+def launchAnimation(ev):
+    global anim
+    # 初始啟動, anim 為 None
+    if anim is None:
+        # 每 0.08 秒執行一次 draw 函式繪圖
+        #anim = timer.set_interval(draw, 80)
+        anim = browser.timer.set_interval(game, 100)
+        # 初始啟動後, 按鈕文字轉為"暫停"
+        doc['power'].text = '暫停'
+    elif anim == 'hold':
+        # 當 anim 為 'hold' 表示曾經暫停後的啟動, 因此持續以 set_interval() 持續旋轉, 且將 power 文字轉為"暫停"
+        #anim = timer.set_interval(draw, 80)
+        anim = browser.timer.set_interval(game, 100)
+        doc['power'].text = '暫停'
+    else:
+        # 初始啟動後, 使用者再按 power, 此時 anim 非 None 也不是 'hold', 因此會執行 clear_interval() 暫停
+        # 且將 anim 變數設為 'hold', 且 power 文字轉為"繼續"
+        #timer.clear_interval(anim)
+        browser.timer.clear_interval(anim)
+        anim = 'hold'
+        doc['power'].text = '繼續'
+        
 # 綠色方塊起點座標與 x 及 y 方向的座標增量
 nowx = 1
 nowy = 1
@@ -188,22 +218,8 @@ origy = 1
 # 利用 grid 函式畫出格線
 grid(origx, origy, w, h, wnum, hnum, pixel=1, color="black")
 
-'''
-# 利用 draw_rect 以 grid 座標畫出正方形, 內建為 lime
-draw_rect(3, 3, 30, 30)
-
-# 利用隨機亂數產生五個紅色方塊
-# wnum 與 hnum 為 x 與 y 方向的格子個數
-# w 與 h 方向上的方塊 pixel 數
-wrect_size = 30
-hrect_size = 30
-# 利用 for 迴圈產生五個紅色方塊
-for i in range(5):
-    xcoord = randint(1, wnum)
-    ycoord = randint(1, hnum)
-    draw_rect(xcoord, ycoord, wrect_size, hrect_size, color="red")
-'''
-browser.timer.set_interval(game, 100)</pre>
+doc["power"].bind("click", launchAnimation)
+#browser.timer.set_interval(game, 100)</pre>
 </div>
 <div></div>
 </div><h2>w14</h2>

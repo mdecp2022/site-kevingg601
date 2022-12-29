@@ -130,7 +130,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li class='has-children'><a href='HW.html'>HW</a><ul class='dropdown'><li><a href='w16.html'>w16</a><li><a href='w15-2.html'>w15-2</a><li><a href='w15.html'>w15</a><li><a href='w14.html'>w14</a><li><a href='w13.html'>w13</a><li><a href='w12.html'>w12</a><li><a href='w11.html'>w11</a><li><a href='w10.html'>w10</a><li><a href='w6.html'>w6</a><li><a href='w5.html'>w5</a></li></ul><li><a href='Brython.html'>Brython</a></li>
+                     <li><a href='About.html'>About</a><li class='has-children'><a href='HW.html'>HW</a><ul class='dropdown'><li><a href='w15-2.html'>w15-2</a><li><a href='w15.html'>w15</a><li><a href='w14.html'>w14</a><li><a href='w13.html'>w13</a><li><a href='w12.html'>w12</a><li><a href='w11.html'>w11</a><li><a href='w10.html'>w10</a><li><a href='w6.html'>w6</a><li><a href='w5.html'>w5</a></li></ul><li><a href='Brython.html'>Brython</a></li>
                       </ul>
                 </nav>
               </div>
@@ -141,8 +141,8 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">w16 << <a href='w16.html'>Previous</a> <a href='w15.html'>Next</a> >> w15<br /><h1>w15-2</h1>
-<p><a href="https://mdecp2022.github.io/site-kevingg601/content/Brython.html?src=https://gist.githubusercontent.com/kevingg601/b783db867bc4fa60a0089c293e9abe43/raw/a7ddb032df4dfd81d9ff17698347fbce8dd32b32/%25E7%25B6%25A0%25E6%2596%25B9%25E5%25A1%258A">第一種綠方塊</a></p>
+    <div id="tipue_search_content">HW << <a href='HW.html'>Previous</a> <a href='w15.html'>Next</a> >> w15<br /><h1>w15-2</h1>
+<p><a href="https://mdecp2022.github.io/site-kevingg601/content/Brython.html?src=https://gist.githubusercontent.com/kevingg601/ac699ea77512e5c5d1a3afe03b7cc9b5/raw/5c6406f701a4ccb61be4ebe2a89a1b1689b9ebd4/%25E7%25B6%25A0%25E6%2596%25B9%25E5%25A1%258A%2520ver2">綠方塊</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 這個程式用於 demo 綠色方塊沿著特定網格路徑行走
 # 從 Brython 程式庫中的 browser 模組導入 document 類別, 並以簡寫設定為 doc
 from browser import document as doc
@@ -250,26 +250,26 @@ def draw():
 # 繞著外圍行走
 def walk():
     global stepx, stepy
-    # 向下
-    if nowy &lt; 15 and nowx == 8 and nowy!=8:
+    
+    if nowy ==1 and nowx == 1:
+        stepx = 1
+        stepy = 0
+    
+    if nowx == 8 and nowy == 1:
         stepx = 0
         stepy = 1
-    # 向右
-    elif nowx &lt; 8 and nowy == 1:
+    if nowy == 15 and nowx == 8:
         stepx = 1
         stepy = 0
-    elif nowx &lt; 15 and nowy == 15:
-        stepx = 1
-        stepy = 0
-    # 向上
-    elif nowy == 15 and nowx == 15:
+    
+    if nowx == 15 and nowy == 15:
         stepx = 0
         stepy = -1
-    # 向左
-    elif nowx == 15 and nowy == 8:
+    
+    if nowx == 15 and nowy == 8:
         stepx = -1
         stepy = 0
-    elif nowx == 1 and nowy == 8:
+    if nowx == 1 and nowy == 8:
         stepx = 0
         stepy = -1
         
@@ -333,7 +333,7 @@ grid(origx, origy, w, h, wnum, hnum, pixel=1, color="black")
 
 doc["power"].bind("click", launchAnimation)
 #browser.timer.set_interval(game, 100)</pre>
-<p><br/><br/></p><br />w16 << <a href='w16.html'>Previous</a> <a href='w15.html'>Next</a> >> w15</div>
+<p><br/><br/></p><br />HW << <a href='HW.html'>Previous</a> <a href='w15.html'>Next</a> >> w15</div>
         
     <!-- footer -->
       <div class="container">
